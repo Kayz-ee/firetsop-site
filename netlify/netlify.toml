@@ -1,6 +1,1 @@
-[build]
-  publish = "docs"
-  functions = "netlify/functions"
 
-[dev]
-  functions = "netlify/functions"
