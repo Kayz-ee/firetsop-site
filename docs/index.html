@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FireStop — Fire Safety Equipment</title>
+  <meta name="description" content="Buy certified fire extinguishers and fire safety equipment. Nationwide delivery, trusted protection." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Supabase + Paystack -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🔥 FireStop</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#contact">Contact</a>
+      <button id="openCart">🛒 <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <h2>Protecting Lives & Property</h2>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <h2 style="grid-column:1/-1;text-align:center;color:#d62828;">Our Products</h2>
+    <div id="productGrid"></div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2 style="text-align:center;margin-bottom:20px;">Contact Us</h2>
+    <form id="checkoutForm">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Email address" required />
+      <input type="tel" name="phone" placeholder="Phone number" required />
+      <button type="submit">Checkout</button>
+      <small id="formMsg"></small>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> FireStop. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <aside class="cart" id="cart">
+    <div class="cart__head">
+      <strong>Your Cart</strong>
+      <button id="closeCart">✕</button>
+    </div>
+    <div id="cartItems" class="cart__items"></div>
+    <div class="cart__foot">
+      <p>Total: ₦<span id="cartTotal">0</span></p>
+    </div>
+  </aside>
+
+  <!-- Supabase config -->
+  <script>
+    window.supabaseClient = supabase.createClient(
+      "YOUR_SUPABASE_URL",
+      "YOUR_SUPABASE_ANON_KEY"
+    );
+  </script>
+  <script src="app.js" defer></script>
+</body>
+</html>
